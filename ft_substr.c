@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:33:58 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 14:22:05 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/10 17:20:08 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/10 17:39:08 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	s;
-	int nb;
+	size_t i;
+	size_t j;
+	char	*sm;
 
-	nb = 0;
 	i = 0;
-	s = 1;
-	while ((nptr[i] == ' ') || (nptr[i] >= 7 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
-		s = s * -1;
-	i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	j = (size_t)start;
+	if (!s[i] || len == 0)
+		return (0);
+	sm = malloc(sizeof(char) * len);
+	if (!sm)
+		return (0);
+	while (len > 1)
 	{
-		nb *= 10;
-		nb += nptr[i] - 48;
+		sm[i] = s[j];
 		i++;
+		j++;
+		len--;
 	}
-	return (s * nb);
+	sm[i] = '\0';
+	return (sm);
 }
 /*
-int	main(int argc, char **argv)
+int	main(void)
 {
-	(void) argc;
-	printf("%d", ft_atoi(argv[1]));
+	char const s[] = "je me couche a neuf heure de l'apres minuit";
+
+	printf("%s", ft_substr(s, 6, 7));
 	return (0);
 }*/

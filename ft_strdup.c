@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:33:58 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 14:22:05 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/10 15:31:07 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/10 17:18:29 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(const char *s)
 {
 	int	i;
-	int	s;
-	int nb;
+	char	*sm;
 
-	nb = 0;
 	i = 0;
-	s = 1;
-	while ((nptr[i] == ' ') || (nptr[i] >= 7 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
-		s = s * -1;
-	i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	sm = malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	if (!sm)
+		return (0);
+	while (s[i])
 	{
-		nb *= 10;
-		nb += nptr[i] - 48;
+		sm[i] = s[i];
 		i++;
 	}
-	return (s * nb);
+	sm[i] = '\0';
+	return (sm);
 }
 /*
-int	main(int argc, char **argv)
+int	main(void)
 {
-	(void) argc;
-	printf("%d", ft_atoi(argv[1]));
+	const char s[] = "bonsoir";
+
+	printf("%s", ft_strdup(s));
 	return (0);
 }*/

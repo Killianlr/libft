@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:33:58 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 14:22:05 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/11 18:18:15 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/11 18:23:46 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	int	s;
-	int nb;
-
-	nb = 0;
-	i = 0;
-	s = 1;
-	while ((nptr[i] == ' ') || (nptr[i] >= 7 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
-		s = s * -1;
-	i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nb *= 10;
-		nb += nptr[i] - 48;
-		i++;
-	}
-	return (s * nb);
+	
 }
-/*
-int	main(int argc, char **argv)
+
+int	main(void)
 {
-	(void) argc;
-	printf("%d", ft_atoi(argv[1]));
-	return (0);
-}*/
+	char s[50] = "bonsoir";
+	char *f;
+
+	f = ()
+}

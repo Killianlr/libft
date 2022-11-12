@@ -1,43 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:33:58 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 14:22:05 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/10 17:39:57 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/10 17:58:22 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	s;
-	int nb;
+	int i;
+	int j;
+	char *s12;
+	int len;
 
-	nb = 0;
 	i = 0;
-	s = 1;
-	while ((nptr[i] == ' ') || (nptr[i] >= 7 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
-		s = s * -1;
-	i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	j = 0;
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	s12 = malloc(sizeof(char) * (len + 1));
+	if (!s12)
+		return (0);
+	while (i < len + 1)
 	{
-		nb *= 10;
-		nb += nptr[i] - 48;
+		if (i < ft_strlen((char *)s1))
+			s12[i] = s1[i];
+		else
+			s12[i] = s2[j++];
 		i++;
 	}
-	return (s * nb);
+	s12[i] = 0;
+	return (s12);
 }
 /*
-int	main(int argc, char **argv)
+int	main(void)
 {
-	(void) argc;
-	printf("%d", ft_atoi(argv[1]));
+	char const s1[] = "rolling ";
+	char const s2[] = "stone";
+
+	printf("%s", ft_strjoin(s1, s2));
 	return (0);
 }*/

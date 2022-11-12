@@ -1,43 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 17:33:58 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 14:22:05 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/10 14:23:23 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/10 15:05:49 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	i;
-	int	s;
-	int nb;
+	char	*str;
+	size_t i;
 
-	nb = 0;
 	i = 0;
-	s = 1;
-	while ((nptr[i] == ' ') || (nptr[i] >= 7 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
-		s = s * -1;
-	i++;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	if (!nmemb || !size)
+		return (0);
+	if (size * nmemb > 4294967295)
+		return (0);
+	str = malloc(size * nmemb);
+	if (!str)
+		return (0);
+	while (i < nmemb)
 	{
-		nb *= 10;
-		nb += nptr[i] - 48;
+		str[i] = 0;
 		i++;
 	}
-	return (s * nb);
+	return ((void *)str);
 }
 /*
-int	main(int argc, char **argv)
+int	main(void)
 {
-	(void) argc;
-	printf("%d", ft_atoi(argv[1]));
+	char	*s;
+	char	t[] = "hello";
+
+	s = ft_calloc(3, 1);
+	ft_strlcpy(s, t, 3);
+	printf("%s\n", s);
+	free (s);
+	printf("%s\n", s);
 	return (0);
 }*/
