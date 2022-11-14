@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:59:08 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/11 00:11:41 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:03:59 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_checksetav(char const *s1, char const *set)
 {
 	int	i;
-	int j;
-	int e;
+	int	j;
+	int	e;
 
 	j = 0;
 	i = 0;
@@ -40,8 +40,8 @@ int	ft_checksetav(char const *s1, char const *set)
 int	ft_checksetar(char const *s1, char const *set)
 {
 	int	i;
-	int j;
-	int e;
+	int	j;
+	int	e;
 
 	j = 0;
 	i = (ft_strlen((char *) s1) - 1);
@@ -62,12 +62,12 @@ int	ft_checksetar(char const *s1, char const *set)
 	return (i);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *str;
-	int i;
-	int j;
-	int len;
+	char	*str;
+	int		i;
+	int		j;
+	int		len;
 
 	j = 0;
 	len = (ft_checksetar(s1, set) - ft_checksetav(s1, set));
@@ -83,7 +83,7 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char const s1[] = "l8l";
@@ -95,4 +95,4 @@ int	main(void)
 	printf("%s", su);
 	free(su);
 	return (0);
-}
+}*/

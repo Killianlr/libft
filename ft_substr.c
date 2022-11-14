@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:20:08 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 17:39:08 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:08:01 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 	char	*sm;
 
 	i = 0;

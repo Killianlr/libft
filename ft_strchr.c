@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:58:09 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/09 13:48:44 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:08:39 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
 	char	*sc;
 
 	sc = (char *)s;

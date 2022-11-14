@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:23:23 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 15:05:49 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:39:52 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*str;
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (!nmemb || !size)

@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:13:40 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/11 01:31:12 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:45:05 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlendec(char const *s, char c, int i)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (s[i] == c)
@@ -27,7 +27,7 @@ int	ft_strlendec(char const *s, char c, int i)
 	return (count);
 }
 
-char **ft_filltab(char const *s, char c, char **arr, int row)
+char	**ft_filltab(char const *s, char c, char **arr, int row)
 {
 	int	i;
 	int	y;
@@ -58,7 +58,7 @@ char **ft_filltab(char const *s, char c, char **arr, int row)
 
 int	ft_countrow(char const *s, char c)
 {
-	int count;
+	int	count;
 	int	i;
 
 	count = 0;
@@ -74,7 +74,7 @@ int	ft_countrow(char const *s, char c)
 
 int	ft_check_full(char const *s, char c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] == c)
@@ -84,11 +84,11 @@ int	ft_check_full(char const *s, char c)
 	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int i;
-	int row;
-	char **arr;
+	int		i;
+	int		row;
+	char	**arr;
 
 	i = 0;
 	if (!ft_check_full(s, c))
@@ -108,7 +108,7 @@ char **ft_split(char const *s, char c)
 	}
 	return (arr);
 }
-
+/*
 int main(void)
 {
 	char const s[] = "   fsjadgiadf   ";
@@ -116,4 +116,4 @@ int main(void)
 
 	ft_split(s, c);
 	return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:05:48 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/11 18:16:01 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:11:51 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_reverse(char *nb, int c)
 {
-	char temp;
-	int i;
+	char	temp;
+	int		i;
 
 	i = 0;
 	while (i < c / 2)
@@ -30,7 +30,7 @@ char	*ft_reverse(char *nb, int c)
 
 int	ft_count(int n)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (n > 10)
@@ -41,8 +41,11 @@ int	ft_count(int n)
 	return (i);
 }
 
-char	*ft_convertnb(char *nb, int n, int c, int i, int s)
+char	*ft_convertnb(char *nb, int n, int c, int s)
 {
+	int	i;
+
+	i = 0;
 	nb[i] = n % 10 + 48;
 	i++;
 	while (n > 10)
@@ -62,15 +65,12 @@ char	*ft_convertnb(char *nb, int n, int c, int i, int s)
 	return (nb);
 }
 
-
 char	*ft_itoa(int n)
 {
-	int	s;
-	int c;
-	char *nb;
-	int i;
+	int		s;
+	int		c;
+	char	*nb;
 
-	i = 0;
 	if (n < 0)
 	{
 		s = 1;
@@ -82,7 +82,7 @@ char	*ft_itoa(int n)
 	nb = malloc(sizeof(int) * (c + s));
 	if (!nb)
 		return (0);
-	ft_convertnb(nb, n, c, i, s);
+	ft_convertnb(nb, n, c, s);
 	return (nb);
 }
 /*

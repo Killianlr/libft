@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:22:23 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/09 17:07:15 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:36:50 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*str1;
 	unsigned char	*str2;
-	size_t i;
+	size_t			i;
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;

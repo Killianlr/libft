@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 11:45:44 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:48 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/12 14:48:19 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/12 16:16:49 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+// void	f(unsigned int i, char *c)
+// {
+// 	c[i] -= 30;
+// }
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	unsigned int	i;
+
+	i = 0;
+	while (i < (unsigned int)ft_strlen(s))
+	{
+		f(i, s);
+		i++;
+	}
 }
+
+// int main(void)
+// {
+// 	char	s[50] = "bonsoir";
+
+// 	ft_striteri(s, f);
+// 	printf("%s", s);
+// 	return(0);
+// }

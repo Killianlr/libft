@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:39:57 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/10 17:58:22 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:44:11 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	char *s12;
-	int len;
+	size_t	i;
+	size_t	j;
+	char	*s12;
+	size_t	len;
 
 	i = 0;
 	j = 0;

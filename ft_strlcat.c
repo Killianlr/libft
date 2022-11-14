@@ -6,18 +6,18 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:15:12 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/09 13:41:31 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:21:56 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_strlcat(char *dest, const char *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	size_t i;
-	int k;
-	int j;
+	size_t	i;
+	size_t	k;
+	size_t	j;
 
 	k = 0;
 	i = 0;
@@ -26,9 +26,7 @@ int	ft_strlcat(char *dest, const char *src, size_t n)
 		return (1);
 	j = ft_strlen(dest) + ft_strlen((char *)src) + 1;
 	while (dest[i] && i < n - 1)
-	{
 		i++;
-	}
 	while (src[k] && i < n - 1)
 	{
 		dest[i] = src[k];
@@ -41,7 +39,6 @@ int	ft_strlcat(char *dest, const char *src, size_t n)
 		k++;
 		i++;
 	}
-//	printf("%s\n", dest);
 	return (j);
 }
 /*

@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 11:45:44 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:48 by kle-rest         ###   ########.fr       */
+/*   Created: 2022/11/13 17:38:16 by kle-rest          #+#    #+#             */
+/*   Updated: 2022/11/13 17:57:37 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = ft_lstsize(lst);
+	while (i > 1)
+	{
+		lst = lst->next;
+		i--;
+	}
+	return (lst);
 }
