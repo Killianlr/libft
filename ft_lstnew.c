@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:13:46 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/13 17:00:55 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:27:18 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new;
+	t_list	*new;
 
 	new = malloc(sizeof(t_list));
 	if (!new)

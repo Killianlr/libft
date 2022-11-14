@@ -6,13 +6,13 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:35:37 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/13 17:57:22 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:26:54 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
