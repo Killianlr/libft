@@ -43,13 +43,13 @@ SOURCES_BONUS = ft_lstnew.c \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-	main_bonus.c \
+	ft_lstmap.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
 OBJECTS_BONUS = $(SOURCES_BONUS:.c=.o)
 
-CFLAGS += 
+CFLAGS += -Wall -Werror -Wextra
 
 $(NAME): $(OBJECTS)
 	gcc $(CFLAGS) -c $(OBJECTS)

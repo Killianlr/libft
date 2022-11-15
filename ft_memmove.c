@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:19:28 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:04:27 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:39:18 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,44 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*cdest;
-	const char	*csrc;
-	char		temp[n];
-	int			i;
+	size_t	i;
 
 	i = 0;
-	cdest = dest;
-	csrc = src;
-	while (csrc[i])
+	if (!src || !dest)
+		return (NULL);
+	if (src < dest)
 	{
-		temp[i] = csrc[i];
-		i++;
+		while (n)
+		{
+			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
+			n--;
+		}
 	}
-	i = 0;
-	while (n-- > 0)
+	else
 	{
-		cdest[i] = temp[i];
-		i++;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
 	return (dest);
 }
-/*
-int	main(void)
-{
-	char src[] = "hello world";
 
-	memmove(src + 4, src, 5);
-	printf("%s", src);
-	return (0);
-}*/
-/*
-int	main(void)
-{
-	char src[] = "hello world";
+// int	main(void)
+// {
+// 	char src[] = "hello world";
 
-	memmove(src + 4, src, 5);
-	printf("%s", src);
-	return (0);
-}*/
+// 	ft_memmove(src + 2, src, 10);
+// 	printf("%s", src);
+// 	return (0);
+// }
+
+// int	main(void)
+// {
+// 	char src[] = "hello world";
+
+// 	memmove(src + 2, src, 10);
+// 	printf("%s", src);
+// 	return (0);
+// }

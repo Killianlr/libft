@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:01:26 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/14 15:30:50 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:28:20 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 void	del(void *content)
 {
+	(void)content;
 	content = NULL;
+}
+
+void	*f(void *content)
+{
+	char	*temp;
+
+	temp = (char *)content;
+	temp = "guengat";
+	return ((void *)temp);
 }
 
 void	printList(t_list *c)
@@ -26,19 +36,6 @@ void	printList(t_list *c)
 	}
 }
 
-void	freeloop(t_list *c)
-{
-	t_list	*temp;
-
-	temp = c;
-	while (c)
-	{
-		temp = c->next;
-		free(c);
-		c = temp;
-	}
-}
-
 int	main(void)
 {
 	t_list	*l0 = ft_lstnew("list0");
@@ -46,6 +43,7 @@ int	main(void)
 	t_list	*l2 = NULL;
 	t_list	*l3 = NULL;
 	t_list	*l4 = NULL;
+	t_list	*new = NULL;
 
 	l1 = malloc(sizeof(t_list*));
 	l2 = malloc(sizeof(t_list*));
@@ -64,11 +62,12 @@ int	main(void)
 	//printf("%s\n", (char *)ft_lstlast(l0)->content);
 	//printf("%d\n", ft_lstsize(l0));
 	//ft_lstadd_back(&l0, l2);
-	//freeloop(l0);
-	ft_lstdelone(l4, del);
+	new = ft_lstmap(l0, f, del);
+	//ft_lstdelone(l4, del);
+	printList(new);
 	printList(l0);
-
-
+	ft_lstclear(&new, del);
+	ft_lstclear(&l0, del);
 
 	return(0);
 }
