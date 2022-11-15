@@ -6,13 +6,15 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:33:46 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:09:15 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:08:27 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 177)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

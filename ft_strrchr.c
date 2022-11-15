@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:50:34 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:15:57 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:59:39 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*sc;
 
 	i = 0;
+	if (!s)
+		return (0);
 	sc = (char *)s;
 	while (sc[i])
 		i++;
@@ -27,5 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (&sc[i]);
 		i--;
 	}
+	if (sc[i] == c)
+		return (&sc[i]);
 	return (0);
 }

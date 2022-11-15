@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:23:23 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 15:39:52 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:33:48 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (!nmemb || !size)
 		return (0);
 	if (size * nmemb > 4294967295)
-		return (0);
+ 		return (0);
 	str = malloc(size * nmemb);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (i < nmemb)
 	{
 		str[i] = 0;

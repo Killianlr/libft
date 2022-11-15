@@ -67,5 +67,5 @@ fclean: clean
 re: fclean all
 
 bonus : $(OBJECTS_BONUS)
-	gcc $(CFLAGS) $(OBJECTS_BONUS)
+	gcc $(CFLAGS) -c $(OBJECTS_BONUS)
 	ar -r $(NAME) $(OBJECTS_BONUS)
