@@ -6,11 +6,12 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:13:40 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/14 14:45:05 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:45:46 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 int	ft_strlendec(char const *s, char c, int i)
 {
@@ -38,7 +39,7 @@ char	**ft_filltab(char const *s, char c, char **arr, int row)
 	while (i < row)
 	{
 		l = 0;
-		arr[i] = malloc(sizeof(char) * ft_strlendec(s, c, y) + 1);
+		arr[i] = malloc(sizeof(char) * (ft_strlendec(s, c, y) + 1));
 		if (!arr[i])
 			return (0);
 		while (s[y] == c)
@@ -95,25 +96,40 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	while (*s == c)
 		s++;
-	row = ft_countrow(s, c) + 1;
-	printf("%d\n", row);
-	arr = malloc(sizeof(char *) * row + 1);
+	row = (ft_countrow(s, c) + 1);
+	//printf("row = %d\n", row);
+	arr = malloc(sizeof(char *) * (row + 1));
 	if (!arr)
 		return (0);
 	ft_filltab(s, c, arr, row);
-	while (i < row)
+	if (!arr[i])
+		return (0);
+	while (i <= row)
 	{
-		printf("%s\n", arr[i]);
+	//printf("i = %d\n", i);
 		++i;
 	}
+	arr[i] = NULL;
 	return (arr);
 }
 /*
 int main(void)
 {
-	char const s[] = "   fsjadgiadf   ";
-	char c = ' ';
+	char const s[] = "tripouille";
+	char c = 0;
+	char	**arr;
+	// int	i;
 
-	ft_split(s, c);
+	arr = ft_split(s, c);
+	// i = 0;
+	printf("arr[0] = %s\n", arr[0]);
+	printf("arr[1] = %s\n", arr[1]);
+	printf("%d", strcmp(arr[0], "tripouille"));
+	//printf("arr[2] = %s\n", arr[2]);
+	// while (arr[i])
+	// {
+	// 	printf("%s\n", arr[i]);
+	// 	i++;
+	// }
 	return (0);
 }*/

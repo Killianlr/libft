@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:50:22 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:21 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:57:22 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	if (!big[i])
 		return (0);
-	while (big[i] && i < len - 1)
+	while (big[i] && len && i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j] && i + j < len - 1)
+		while (big[i + j] == little[j] && i + j < len)
 		{
 			j++;
 			if (j == (size_t)ft_strlen((char *)little))

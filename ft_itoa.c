@@ -71,6 +71,8 @@ char	*ft_itoa(int n)
 	int		c;
 	char	*nb;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		s = 1;
@@ -79,9 +81,9 @@ char	*ft_itoa(int n)
 	else
 		s = 0;
 	c = ft_count(n);
-	nb = malloc(sizeof(int) * (c + s));
+	nb = malloc(sizeof(char) * (c + s + 1));
 	if (!nb)
-		return (0);
+		return (NULL);
 	ft_convertnb(nb, n, c, s);
 	return (nb);
 }

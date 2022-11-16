@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:50:34 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/15 18:59:39 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:50:10 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 	if (!s)
 		return (0);
 	sc = (char *)s;
+	if (c > 127)
+		return ((char *)s);
 	while (sc[i])
 		i++;
 	while (i > 0)

@@ -21,13 +21,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	if (!s1 || !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
 	s12 = malloc(sizeof(char) * (len + 1));
 	if (!s12)
 		return (0);
-	while (i < len + 1)
+	while (i < len)
 	{
-		if (i < ft_strlen((char *)s1))
+		if (i < ft_strlen(s1))
 			s12[i] = s1[i];
 		else
 			s12[i] = s2[j++];

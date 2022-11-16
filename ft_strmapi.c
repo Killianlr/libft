@@ -16,6 +16,7 @@
 // {
 // 	char	a;
 
+// 	printf("%u\n", i);
 // 	a = c + i;
 // 	return (a);
 // }
@@ -26,12 +27,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	str = malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (0);
-	while (i < ft_strlen((char *)s))
+	while (i < ft_strlen(s))
 	{
-		str[i] = f(-31, s[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = 0;

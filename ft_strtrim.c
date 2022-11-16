@@ -6,11 +6,12 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:59:08 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:03:59 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:00:50 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "string.h"
 
 int	ft_checksetav(char const *s1, char const *set)
 {
@@ -20,6 +21,7 @@ int	ft_checksetav(char const *s1, char const *set)
 
 	j = 0;
 	i = 0;
+	e = 1;
 	while (s1[i])
 	{
 		e = 0;
@@ -32,20 +34,21 @@ int	ft_checksetav(char const *s1, char const *set)
 		i++;
 		j = 0;
 		if (e == 0)
-			return (i);
+			return (i - 1);
 	}
-	return (i);
+	return (i - 1);
 }
 
-int	ft_checksetar(char const *s1, char const *set)
+int	ft_checksetar(char const *s1, char const *set, int k)
 {
 	int	i;
 	int	j;
 	int	e;
 
 	j = 0;
-	i = (ft_strlen((char *) s1) - 1);
-	while (i > 0)
+	i = (ft_strlen(s1) - 1);
+	e = 1;
+	while (i > 0 && i >= k)
 	{
 		e = 0;
 		while (set[j])
@@ -54,12 +57,15 @@ int	ft_checksetar(char const *s1, char const *set)
 				e = 1;
 			j++;
 		}
-		i--;
-		j = 0;
 		if (e == 0)
-			return (i);
+			return (i + 1);
+		else
+		{	
+			i--;
+			j = 0;
+		}
 	}
-	return (i);
+	return (i + 1);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -68,31 +74,38 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 	int		len;
+	int		u;
 
+	if (!ft_strncmp(s1, "", 1))
+		return (ft_strdup(""));
 	j = 0;
-	len = (ft_checksetar(s1, set) - ft_checksetav(s1, set));
-	i = ft_checksetav(s1, set) - 1;
-	str = malloc(sizeof(char) * len + 1);
+	i = ft_checksetav(s1, set);
+	u = ft_checksetar(s1, set, i);
+	len = u - i;
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
-	while (i <= ft_checksetar(s1, set) + 1)
+	while (i < u)
 	{
 		str[j] = s1[i];
 		i++;
 		j++;
 	}
+	str[j] = 0;
 	return (str);
 }
 /*
 int	main(void)
 {
-	char const s1[] = "l8l";
-	char const set[] = "abcdefghijklmnopqrstuvwxyz";
+	char const s1[] = "";
+//	printf("s1 size = %ld", ft_strlen(s1));
+	char const set[] = "123";
 	char *su;
 
 	su = ft_strtrim(s1, set);
+	printf("%d\n", strcmp(su, ""));
 	//ft_strtrim(s1, set);
-	printf("%s", su);
+	printf("%s\n", su);
 	free(su);
 	return (0);
 }*/

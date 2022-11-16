@@ -20,12 +20,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = (size_t)start;
-	if (!s[i] || len == 0)
+	if (!s || !s[i])
 		return (0);
-	sm = malloc(sizeof(char) * len);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
+	sm = malloc(sizeof(char) * (len + 1));
 	if (!sm)
 		return (0);
-	while (len > 1)
+	while (len > 0)
 	{
 		sm[i] = s[j];
 		i++;
@@ -40,6 +44,6 @@ int	main(void)
 {
 	char const s[] = "je me couche a neuf heure de l'apres minuit";
 
-	printf("%s", ft_substr(s, 6, 7));
+	printf("%s", ft_substr(s, 1, 1));
 	return (0);
 }*/
