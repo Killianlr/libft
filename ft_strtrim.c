@@ -6,14 +6,13 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:59:08 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/16 16:00:50 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:07:52 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
 
-int	ft_checksetav(char const *s1, char const *set)
+static int	ft_checksetav(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -39,7 +38,7 @@ int	ft_checksetav(char const *s1, char const *set)
 	return (i - 1);
 }
 
-int	ft_checksetar(char const *s1, char const *set, int k)
+static int	ft_checksetar(char const *s1, char const *set, int k)
 {
 	int	i;
 	int	j;
@@ -94,18 +93,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[j] = 0;
 	return (str);
 }
-/*
-int	main(void)
-{
-	char const s1[] = "";
-//	printf("s1 size = %ld", ft_strlen(s1));
-	char const set[] = "123";
-	char *su;
-
-	su = ft_strtrim(s1, set);
-	printf("%d\n", strcmp(su, ""));
-	//ft_strtrim(s1, set);
-	printf("%s\n", su);
-	free(su);
-	return (0);
-}*/

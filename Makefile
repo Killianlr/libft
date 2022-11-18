@@ -49,11 +49,11 @@ OBJECTS = $(SOURCES:.c=.o)
 
 OBJECTS_BONUS = $(SOURCES_BONUS:.c=.o)
 
-CFLAGS += -Wall -Werror -Wextra
+CC = cc
+CFLAGS = -Wall -Werror -Wextra
 
 $(NAME): $(OBJECTS)
-	gcc $(CFLAGS) -c $(OBJECTS)
-	ar -cr $(NAME) $(OBJECTS)
+	ar crs $(NAME) $(OBJECTS)
 
 all: $(NAME)
 
@@ -66,6 +66,5 @@ fclean: clean
 
 re: fclean all
 
-bonus : $(OBJECTS_BONUS)
-	gcc $(CFLAGS) -c $(OBJECTS_BONUS)
-	ar -r $(NAME) $(OBJECTS_BONUS)
+bonus : $(OBJECTS) $(OBJECTS_BONUS)
+	ar crs $(NAME) $(OBJECTS) $(OBJECTS_BONUS)

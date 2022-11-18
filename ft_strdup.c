@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:31:07 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:16:12 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:06:46 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ char	*ft_strdup(const char *s)
 	sm[i] = '\0';
 	return (sm);
 }
-/*
-int	main(void)
-{
-	const char s[] = "bonsoir";
-
-	printf("%s", ft_strdup(s));
-	return (0);
-}*/

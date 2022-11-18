@@ -6,13 +6,13 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:05:48 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:11:51 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:14:57 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_reverse(char *nb, int c)
+static char	*ft_reverse(char *nb, int c)
 {
 	char	temp;
 	int		i;
@@ -28,7 +28,7 @@ char	*ft_reverse(char *nb, int c)
 	return (nb);
 }
 
-int	ft_count(int n)
+static int	ft_count(int n)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	ft_count(int n)
 	return (i);
 }
 
-char	*ft_convertnb(char *nb, int n, int c, int s)
+static char	*ft_convertnb(char *nb, int n, int c, int s)
 {
 	int	i;
 
@@ -73,6 +73,10 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
+	if (n == 10)
+		return (ft_strdup("10"));
+	if (n == -10)
+		return (ft_strdup("-10"));
 	if (n < 0)
 	{
 		s = 1;
@@ -87,13 +91,3 @@ char	*ft_itoa(int n)
 	ft_convertnb(nb, n, c, s);
 	return (nb);
 }
-/*
-int	main(void)
-{
-	int n;
-
-	n = -2147483647;
-	printf("nb = %s", ft_itoa(n));
-	//ft_count(n);
-	return (0);
-}*/

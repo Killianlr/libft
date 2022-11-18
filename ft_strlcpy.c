@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:54:56 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/15 19:12:21 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:10:57 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		i++;
 	return (i);
 }
-/*
-int	main(void)
-{
-	char	dest[500] = "";
-	char	src[] = "hello world";
-
-	ft_strlcpy(dest, src, 5);
-}*/

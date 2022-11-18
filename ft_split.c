@@ -6,128 +6,92 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 00:13:40 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/16 19:15:04 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:06:41 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-int	ft_strlendec(char const *s, char c, int i)
-{
-	int	count;
-
-	count = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != c)
-	{
-		i++;
-		count++;
-	}
-	return (count);
-}
-
-char	**ft_filltab(char const *s, char c, char **arr, int row)
-{
-	int	i;
-	int	y;
-	int	l;
-
-	i = 0;
-	y = 0;
-	while (i < row)
-	{
-		l = 0;
-		arr[i] = malloc(sizeof(char) * ft_strlendec(s, c, y) + 1);
-		if (!arr[i])
-			return (0);
-		while (s[y] == c)
-			++y;
-		while (s[y] != c)
-		{
-			arr[i][l] = s[y];
-			++y;
-			++l;
-		}
-		arr[i][l] = 0;
-		++i;
-	}
-	arr[i] = NULL;
-	return (arr);
-}
-
-int	ft_countrow(char const *s, char c)
+static int	ft_countword(const char *s, char c)
 {
 	int	count;
 	int	i;
+	int	word;
 
 	count = 0;
 	i = 0;
+	word = 0;
 	while (s[i])
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1] != 0)
+		if (s[i] == c)
+			word = 0;
+		if (word == 0 && s[i] != c)
+		{
 			count++;
+			word = 1;
+		}
 		i++;
 	}
 	return (count);
 }
 
-int	ft_check_full(char const *s, char c)
+static int	ft_sizeword(const char *s, char c, int i)
 {
-	size_t	i;
+	int	size;
 
+	size = 0;
+	while (s[i] && s[i] != c)
+	{
+		size++;
+		i++;
+	}
+	return (size);
+}
+
+static char	*ft_stricpy(char *dest, const char *src, char c, int i)
+{
+	int	j;
+
+	j = 0;
+	while (src[i] && src[i] != c)
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	return (dest);
+}
+
+static char	**ft_fill_tab(char **tab, const char *s, char c)
+{
+	int	r;
+	int	i;
+	int	w_len;
+
+	r = 0;
 	i = 0;
-	while (s[i] == c)
-		++i;
-	if (ft_strlen(s) == i)
-		return (0);
-	return (1);
+	while (r < ft_countword(s, c))
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		w_len = ft_sizeword(s, c, i);
+		tab[r] = malloc(sizeof(char) * (w_len + 1));
+		if (!tab[r])
+			return (NULL);
+		tab[r] = ft_stricpy(tab[r], s, c, i);
+		i += w_len;
+		r++;
+	}
+	tab[r] = NULL;
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		row;
-	char	**arr;
+	char	**tab;
 
-	i = 0;
-	if (!ft_check_full(s, c))
-		return (0);
-	while (*s == c)
-		s++;
-	row = (ft_countrow(s, c) + 1);
-//	printf("row = %d\n", row);
-	arr = malloc(sizeof(char *) * (row + 1));
-	if (!arr)
-		return (0);
-	ft_filltab(s, c, arr, row);
-	if (!arr[i])
-		return (0);
-	return (arr);
+	tab = malloc(sizeof(char *) * (ft_countword(s, c) + 1));
+	tab = ft_fill_tab(tab, s, c);
+	return (tab);
 }
-/*
-int main(void)
-{
-	char const s[] = "   tripouille   42  ";
-	char c = ' ';
-	char	**arr;
-	// int	i;
-
-	arr = ft_split(s, c);
-	// i = 0;
-	printf("arr[0] = %s\n", arr[0]);
-	printf("arr[1] = %s\n", arr[1]);
-	printf("%d", strcmp(arr[0], "tripouille"));
-	//printf("arr[2] = %s\n", arr[2]);
-	// while (arr[i])
-	// {
-	// 	printf("%s\n", arr[i]);
-	// 	i++;
-	// }
-	//free(arr[0]);
-	free(arr[1]);
-	//free(arr[2]);
-	//free(arr);
-	return (0);
-}*/

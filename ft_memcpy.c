@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:28:01 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/15 18:01:51 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:36:40 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,13 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char		*cdest;
 	const char	*csrc;
 
-	cdest = dest;
-	csrc = src;
+	cdest = (char *)dest;
+	csrc = (char *)src;
+	if (!src)
+		return (dest);
 	while (n-- > 0)
 	{
 		*cdest++ = *csrc++;
 	}
-	return (cdest);
+	return (dest);
 }
-
-/*
-int	main(void)
-{
-	char dest[20] = "";
-	char src[] = "hello world";
-
-	ft_memcpy(dest, src, 10);
-	printf("%s", dest);
-	return (0);
-}*/

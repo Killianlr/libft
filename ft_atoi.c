@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:33:58 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/15 18:51:50 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:05:26 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (s * nb);
 }
-/*
-int	main(int argc, char **argv)
-{
-	(void) argc;
-	printf("%d", ft_atoi(argv[1]));
-	return (0);
-}*/

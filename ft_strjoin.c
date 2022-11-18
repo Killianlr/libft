@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:39:57 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/14 14:44:11 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:06:57 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s12[i] = 0;
 	return (s12);
 }
-/*
-int	main(void)
-{
-	char const s1[] = "rolling ";
-	char const s2[] = "stone";
-
-	printf("%s", ft_strjoin(s1, s2));
-	return (0);
-}*/

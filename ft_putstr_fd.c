@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:05:03 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 15:09:55 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:06:32 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-/*
-int main(void)
-{
-	int fd = 1;
-	char s[20] = "bonsoir";
-
-	ft_putstr_fd(s, fd);
-	return (0);
-}*/

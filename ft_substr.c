@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:20:08 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 16:08:01 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:07:57 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sm[i] = '\0';
 	return (sm);
 }
-/*
-int	main(void)
-{
-	char const s[] = "je me couche a neuf heure de l'apres minuit";
-
-	printf("%s", ft_substr(s, 1, 1));
-	return (0);
-}*/

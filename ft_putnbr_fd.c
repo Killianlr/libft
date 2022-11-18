@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:14:33 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/12 15:19:46 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/18 14:06:29 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd((n % 10), fd);
 	}
 }
-/*
-int	main(void)
-{
-	int c;
-	int fd;
-
-	c = -2147483648;
-	fd = 1;
-	ft_putnbr_fd(c, fd);
-	return (0);
-}*/
