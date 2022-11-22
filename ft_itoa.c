@@ -6,7 +6,7 @@
 /*   By: kle-rest <kle-rest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:05:48 by kle-rest          #+#    #+#             */
-/*   Updated: 2022/11/18 15:14:57 by kle-rest         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:23:17 by kle-rest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static int	ft_count(int n)
 	int	i;
 
 	i = 1;
-	while (n > 10)
+	while (n >= 10)
 	{
 		i++;
 		n = n / 10;
-	}	
+	}
 	return (i);
 }
 
@@ -48,7 +48,7 @@ static char	*ft_convertnb(char *nb, int n, int c, int s)
 	i = 0;
 	nb[i] = n % 10 + 48;
 	i++;
-	while (n > 10)
+	while (n >= 10)
 	{
 		n = n / 10;
 		nb[i] = n % 10 + 48;
@@ -73,10 +73,6 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (n == 10)
-		return (ft_strdup("10"));
-	if (n == -10)
-		return (ft_strdup("-10"));
 	if (n < 0)
 	{
 		s = 1;
